@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="ScheduleRequirementViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="SkillTypeID" type="xs:int"/>
+			<xs:element name="ShiftTypeID" type="xs:int"/>
+			<xs:element name="Value" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PrimarySkillViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="SkillTypeID" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RestTimeBetweenShiftsViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="Value" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ShiftRequestViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="ShiftTypeID" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AbsenceRequestViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="ShiftTypeID" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CounterViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="CounterID" type="xs:int"/>
+			<xs:element name="Value" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SeriesViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="SeriesID" type="xs:int"/>
+			<xs:element name="Value" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SuccessiveShiftSeriesViolation">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date"/>
+			<xs:element name="SuccessiveShiftSeriesID" type="xs:int"/>
+			<xs:element name="Value" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PenaltyDetails">
+		<xs:sequence>
+			<xs:element name="Cost" type="xs:int"/>
+			<xs:element name="Schedule">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Penalties">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Penalty" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Cost" type="xs:int"/>
+									<xs:element name="Details">
+									<xs:complexType>
+										<xs:choice>
+											<xs:element name="ScheduleRequirementViolation" type="ScheduleRequirementViolation"/>
+										</xs:choice>
+									</xs:complexType>
+									</xs:element>
+									<xs:element name="Comment" type="xs:string"/>
+								</xs:sequence>
+							</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			</xs:element>
+			<xs:element name="Employees">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Employee" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int"/>
+							<xs:element name="Cost" type="xs:int"/>
+							<xs:element name="Penalties">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Penalty" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Cost" type="xs:int"/>
+											<xs:element name="Details">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="PrimarySkillViolation" type="PrimarySkillViolation"/>
+													<xs:element name="RestTimeBetweenShiftsViolation" type="RestTimeBetweenShiftsViolation"/>
+													<xs:element name="ShiftRequestViolation" type="ShiftRequestViolation"/>
+													<xs:element name="AbsenceRequestViolation" type="AbsenceRequestViolation"/>
+													<xs:element name="CounterViolation" type="CounterViolation"/>
+													<xs:element name="SeriesViolation" type="SeriesViolation"/>
+													<xs:element name="SuccessiveShiftSeriesViolation" type="SuccessiveShiftSeriesViolation"/>
+												</xs:choice>
+											</xs:complexType>
+											</xs:element>
+											<xs:element name="Comment" type="xs:string"/>
+										</xs:sequence>
+									</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

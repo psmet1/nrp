@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+<PenaltyDetails>
+  <Cost>8400</Cost>
+  <Schedule>
+    <Penalties>
+      <Penalty>
+        <Cost>400</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-01</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>400</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-01</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>4</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-02</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>1</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-02</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>3</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-07</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-07</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>3</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>400</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-08</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-08</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-09</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>1</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-10</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-11</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>3</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-12</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>3</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>400</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-15</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-15</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-18</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>400</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-19</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>4</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-20</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>3</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-22</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>564</ShiftTypeID>
+            <Value>3</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-23</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>508</ShiftTypeID>
+            <Value>1</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-24</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-25</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-25</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-26</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-26</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-27</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-28</Date>
+            <SkillTypeID>175</SkillTypeID>
+            <ShiftTypeID>494</ShiftTypeID>
+            <Value>0</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>200</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-29</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>2</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>600</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-30</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>4</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+      <Penalty>
+        <Cost>600</Cost>
+        <Details>
+          <ScheduleRequirementViolation>
+            <Date>2007-12-31</Date>
+            <SkillTypeID>176</SkillTypeID>
+            <ShiftTypeID>600</ShiftTypeID>
+            <Value>4</Value>
+          </ScheduleRequirementViolation>
+        </Details>
+        <Comment />
+      </Penalty>
+    </Penalties>
+  </Schedule>
+  <Employees>
+    <Employee>
+      <ID>555</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>556</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>558</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>559</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>560</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>561</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>562</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>563</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>565</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>566</ID>
+      <Cost>400</Cost>
+      <Penalties>
+        <Penalty>
+          <Cost>400</Cost>
+          <Details>
+            <CounterViolation>
+              <Date>2007-12-01</Date>
+              <CounterID>1000968</CounterID>
+              <Value>0</Value>
+            </CounterViolation>
+          </Details>
+          <Comments />
+        </Penalty>
+      </Penalties>
+    </Employee>
+    <Employee>
+      <ID>568</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>569</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>570</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>571</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>573</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>574</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>575</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+    <Employee>
+      <ID>2029</ID>
+      <Cost>400</Cost>
+      <Penalties>
+        <Penalty>
+          <Cost>400</Cost>
+          <Details>
+            <CounterViolation>
+              <Date>2007-12-01</Date>
+              <CounterID>1000968</CounterID>
+              <Value>0</Value>
+            </CounterViolation>
+          </Details>
+          <Comments />
+        </Penalty>
+      </Penalties>
+    </Employee>
+    <Employee>
+      <ID>2036</ID>
+      <Cost>0</Cost>
+      <Penalties />
+    </Employee>
+  </Employees>
+</PenaltyDetails>

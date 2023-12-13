@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SchedulingSession" id="v20100531">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Reference" type="xs:string" />
+        <xs:element name="MaxExecutionTime" type="xs:int" />
+        <xs:element name="SchedulePeriod" type="Period" />
+        <xs:element name="Schedule" minOccurs="0" type="Schedule" />
+        <xs:element name="ScheduleConstraints" type="ScheduleConstraints" />
+        <xs:element name="ScheduleDefinitions" type="ScheduleDefinitions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Types that are referred by Schedule -->
+  <xs:complexType name="Schedule">
+    <xs:sequence>
+      <xs:element name="Assignment" maxOccurs="unbounded" type="Assignment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Assignment">
+    <xs:sequence>
+      <xs:element name="EmployeeId" type="xs:string" />
+      <xs:element name="Date" type="xs:date" />
+      <xs:element name="ShiftTypeId" type="xs:string" />
+      <xs:element name="SkillTypeId" type="xs:string" />
+      <xs:element name="LevelOfExperience">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Types that are referred by Schedule Locks -->
+  <xs:complexType name="ScheduleLocks">
+    <xs:sequence>
+      <xs:element name="ScheduleLock" maxOccurs="unbounded" type="ScheduleLock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScheduleLock">
+    <xs:sequence>
+      <xs:element name="EmployeeId" type="xs:string" />
+      <xs:element name="Date" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Types that are referred by Schedule Constraints -->
+  <xs:complexType name="ScheduleConstraints">
+    <xs:sequence>
+      <xs:element name="ScheduleRequirements" type="ScheduleRequirements" />
+      <xs:element name="ScheduleLocks" minOccurs="0" type="ScheduleLocks" />
+      <xs:element name="Collaborations" minOccurs="0" type="Collaborations" />
+      <xs:element name="TrainingSet" minOccurs="0" type="TrainingSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScheduleRequirements">
+    <xs:sequence>
+      <xs:element name="ScheduleRequirementData" maxOccurs="unbounded" type="ScheduleRequirementData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScheduleRequirementData">
+    <xs:sequence>
+      <xs:element name="Date" type="xs:date" />
+      <xs:element name="SkillTypeSetId" type="xs:string" />
+      <xs:element name="LevelOfExperience">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ShiftTypeSetId" type="xs:string" />
+      <xs:element name="Threshold" type="Threshold" />
+      <xs:element name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Collaborations">
+    <xs:sequence>
+      <xs:element name="CollaborationData" maxOccurs="unbounded" type="CollaborationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CollaborationData">
+    <xs:sequence>
+      <xs:element name="EmployeeSet" type="EmployeeSet" />
+      <xs:element name="DomainId" type="xs:string" />
+      <xs:element name="Threshold" type="Threshold" />
+      <xs:element name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeSet">
+    <xs:sequence>
+      <xs:element name="EmployeeId" minOccurs="2" maxOccurs="unbounded" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TrainingSet">
+    <xs:sequence>
+      <xs:element name="TrainingData" maxOccurs="unbounded" type="TrainingData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TrainingData">
+    <xs:sequence>
+      <xs:element name="PrecedingLevel">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SucceedingLevel">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ThresholdRatio">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DomainId" type="xs:string" />
+      <xs:element name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Types that are referred by Schedule Definitions -->
+  <xs:complexType name="ScheduleDefinitions">
+    <xs:sequence>
+      <xs:element name="SkillTypes" type="SkillTypes" />
+      <xs:element name="ShiftTypes" type="ShiftTypes" />
+      <xs:element name="Constraints" type="Constraints" />
+      <xs:element name="Contracts" type="Contracts" />
+      <xs:element name="Employees" type="Employees" />
+      <xs:element name="Domains" type="Domains" />
+      <xs:element name="DaySets" type="DaySets" />
+      <xs:element name="ShiftTypeSets" type="ShiftTypeSets" />
+      <xs:element name="SkillTypeSets" type="SkillTypeSets" />
+      <xs:element name="Weights" type="Weights" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Skill Types-->
+  <xs:complexType name="SkillTypes">
+    <xs:sequence>
+      <xs:element name="SkillType" maxOccurs="unbounded" type="SkillType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkillType">
+    <xs:sequence>
+      <xs:element name="SkillTypeId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Shift Types-->
+  <xs:complexType name="ShiftTypes">
+    <xs:sequence>
+      <xs:element name="ShiftTypeData" maxOccurs="unbounded" type="ShiftTypeData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShiftTypeData">
+    <xs:sequence>
+      <xs:element name="ShiftTypeId" type="xs:string" />
+      <xs:element name="StartTime" type="xs:time" />
+      <xs:element name="EndTime" type="xs:time" />
+      <xs:element name="JobTime" type="xs:int" />
+      <xs:element name="RestTimeBefore" type="xs:int" />
+      <xs:element name="RestTimeAfter" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Constraints">
+    <xs:sequence>
+      <xs:element name="Constraint" maxOccurs="unbounded" type="Constraint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Constraint">
+    <xs:sequence>
+      <xs:element name="ConstraintId" type="xs:string" />
+      <xs:element name="ConstraintType" type="ConstraintType" />
+      <xs:element name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConstraintType">
+    <xs:choice>
+      <xs:element name="SimpleConstraint" type="SimpleConstraint" />
+      <xs:element name="ComplexConstraint" type="ComplexConstraint" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SimpleConstraint">
+    <xs:choice>
+      <xs:element name="Counter" type="Counter" />
+      <xs:element name="Series" type="Series" />
+      <xs:element name="DomainCounter" type="DomainCounter" />
+      <xs:element name="CompleteWeekends" type="CompleteWeekends" />
+      <xs:element name="IdenticalWeekends" type="IdenticalWeekends" />
+      <xs:element name="AvoidShiftBeforeFreeWeekend" type="AvoidShiftBeforeFreeWeekend" />
+    </xs:choice>
+  </xs:complexType>
+  <!-- Employees -->
+  <xs:complexType name="Employees">
+    <xs:sequence>
+      <xs:element name="EmployeeData" maxOccurs="unbounded" type="EmployeeData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeData">
+    <xs:sequence>
+      <xs:element name="EmployeeId" type="xs:string" />
+      <xs:element name="EmployeeSkillTypesSet" type="EmployeeSkillTypesSet" />
+      <xs:element name="EmployeeContractSet" type="EmployeeContractSet" />
+      <xs:element name="Requests" minOccurs="0" type="Requests" />
+      <xs:element name="CounterStartValues" minOccurs="0" type="CounterStartValues" />
+      <xs:element name="CounterRemainderValues" minOccurs="0" type="CounterRemainderValues" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeSkillTypesSet">
+    <xs:sequence>
+      <xs:element name="EmployeeSkillType" type="EmployeeSkillType" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeSkillType">
+    <xs:sequence>
+      <xs:element name="SkillTypeId" type="xs:string" />
+      <xs:element name="LevelOfExperience">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeContractSet">
+    <xs:sequence>
+      <xs:element name="EmployeeContract" maxOccurs="unbounded" type="EmployeeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeContract">
+    <xs:sequence>
+      <xs:element name="ContractId" type="xs:string" />
+      <xs:element name="Period" type="Period" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Contracts -->
+  <xs:complexType name="Contracts">
+    <xs:sequence>
+      <xs:element name="Contract" maxOccurs="unbounded" type="Contract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contract">
+    <xs:sequence>
+      <xs:element name="ContractId" type="xs:string" />
+      <xs:element name="ConstraintId" maxOccurs="unbounded" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Requests -->
+  <xs:complexType name="Requests">
+    <xs:sequence>
+      <xs:element name="AbsenceRequest" minOccurs="0" maxOccurs="unbounded" type="AbsenceRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbsenceRequest">
+    <xs:sequence>
+      <xs:element name="DomainId" type="xs:string" />
+      <xs:element name="JobTime" type="xs:int" />
+      <xs:element name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Counter Start Values -->
+  <xs:complexType name="CounterStartValues">
+    <xs:sequence>
+      <xs:element name="CounterStartValue" maxOccurs="unbounded" minOccurs="0" type="CounterStartValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CounterStartValue">
+    <xs:sequence>
+      <xs:element name="CounterId" type="xs:string" />
+      <xs:element name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Counter Remainder Values -->
+  <xs:complexType name="CounterRemainderValues">
+    <xs:sequence>
+      <xs:element name="CounterRemainderValue" maxOccurs="unbounded" minOccurs="0" type="CounterRemainderValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CounterRemainderValue">
+    <xs:sequence>
+      <xs:element name="CounterId" type="xs:string" />
+      <xs:element name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Weights -->
+  <xs:complexType name="Weights">
+    <xs:sequence>
+      <xs:element name="RestTimeBetweenShifts" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Types that are referred by more than one elements-->
+  <xs:complexType name="Period">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" />
+      <xs:element name="EndDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Domains">
+    <xs:sequence>
+      <xs:element name="Domain" maxOccurs="unbounded" type="Domain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Domain">
+    <xs:sequence>
+      <xs:element name="DomainId" type="xs:string" />
+      <xs:element name="DaySetId" type="xs:string" />
+      <xs:element name="ShiftTypeSetId" type="xs:string" />
+      <xs:element name="SkillTypeSetId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DaySets">
+    <xs:sequence>
+      <xs:element name="DaySet" maxOccurs="unbounded" type="DaySet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DaySet">
+    <xs:sequence>
+      <xs:element name="DaySetId" type="xs:string" />
+      <xs:choice>
+        <xs:element name="DateSet" type="DateSet" />
+        <xs:element name="DayTypes" type="DayTypes" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DateSet">
+    <xs:sequence>
+      <xs:element name="Handling" minOccurs="0" type="Handling" />
+      <xs:element name="Date" maxOccurs="unbounded" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Handling">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Individual" />
+      <xs:enumeration value="Complete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SkillTypeSets">
+    <xs:sequence>
+      <xs:element name="SkillTypeSet" maxOccurs="unbounded" type="SkillTypeSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkillTypeSet">
+    <xs:sequence>
+      <xs:element name="SkillTypeSetId" type="xs:string" />
+      <xs:choice>
+        <xs:element name="Any" type="Any" />
+        <xs:sequence>
+          <xs:element name="SkillTypeId" type="xs:string" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShiftTypeSets">
+    <xs:sequence>
+      <xs:element name="ShiftTypeSet" maxOccurs="unbounded" type="ShiftTypeSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShiftTypeSet">
+    <xs:sequence>
+      <xs:element name="ShiftTypeSetId" type="xs:string" />
+      <xs:choice>
+        <xs:element name="Any" type="Any" />
+        <xs:sequence>
+          <xs:element name="ShiftTypeId" type="xs:string" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Threshold">
+    <xs:choice>
+      <xs:element name="Min" type="xs:int" />
+      <xs:element name="Max" type="xs:int" />
+      <xs:element name="Interval" type="Interval" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Interval">
+    <xs:sequence>
+      <xs:element name="Min" type="xs:int" />
+      <xs:element name="Max" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Constraint Types -->
+  <xs:complexType name="DomainCounter">
+    <xs:sequence>
+      <xs:element name="DomainId" type="xs:string" />
+      <xs:element name="Threshold" type="Threshold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Counter">
+    <xs:sequence>
+      <xs:element name="Period" type="Period" />
+      <xs:element name="Threshold" type="Threshold" />
+      <xs:element name="CounterType" type="CounterType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CounterType">
+    <xs:choice>
+      <xs:element name="HoursWorkedCounter" type="HoursWorkedCounter" />
+      <xs:element name="DaysWorkedCounter" type="DaysWorkedCounter" />
+      <xs:element name="DaysIdleCounter" type="DaysIdleCounter" />
+      <xs:element name="WeekendsWorkedCounter" type="WeekendsWorkedCounter" />
+      <xs:element name="WeekendsIdleCounter" type="WeekendsIdleCounter" />
+      <xs:element name="ShiftTypesWorkedCounter" type="ShiftTypesWorkedCounter" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="WeekendsWorkedCounter">   
+  </xs:complexType>
+  <xs:complexType name="WeekendsIdleCounter">   
+  </xs:complexType>
+  <xs:complexType name="HoursWorkedCounter">
+    <xs:sequence>
+      <xs:element name="DayTypes" type="DayTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DaysWorkedCounter">
+    <xs:sequence>
+      <xs:element name="DayTypes" type="DayTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DaysIdleCounter">
+    <xs:sequence>
+      <xs:element name="DayTypes" type="DayTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShiftTypesWorkedCounter">
+    <xs:sequence>
+      <xs:element name="DayTypes" type="DayTypes" />
+      <xs:element name="ShiftTypeSetId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DayTypes">
+    <xs:sequence>
+      <xs:element name="DayType" maxOccurs="7" type="DayType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DayType">
+    <xs:choice>
+      <xs:element name="Any" type="Any" />
+      <xs:element name="Weekday" maxOccurs="7" type="Weekday" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="Weekday">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Monday" />
+      <xs:enumeration value="Tuesday" />
+      <xs:enumeration value="Wednesday" />
+      <xs:enumeration value="Thursday" />
+      <xs:enumeration value="Friday" />
+      <xs:enumeration value="Saturday" />
+      <xs:enumeration value="Sunday" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Series">
+    <xs:sequence>
+      <xs:element name="Threshold" type="Threshold" />
+      <xs:element name="SeriesType" type="SeriesType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplexConstraint">
+    <xs:sequence>
+      <xs:element name="Constraint1" type="SimpleConstraint" />
+      <xs:element name="Constraint2" type="SimpleConstraint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SeriesType">
+    <xs:choice>
+      <xs:element name="DaysWorkedSeries" type="DaysWorkedSeries" />
+      <xs:element name="DaysIdleSeries" type="DaysIdleSeries" />
+      <xs:element name="WeekendsWorkedSeries" type="WeekendsWorkedSeries" />
+      <xs:element name="WeekendsIdleSeries" type="WeekendsIdleSeries" />
+      <xs:element name="ShiftTypesWorkedSeries" type="ShiftTypesWorkedSeries" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Any">   
+  </xs:complexType>
+  <xs:complexType name="WeekendsWorkedSeries">   
+  </xs:complexType>
+  <xs:complexType name="WeekendsIdleSeries">   
+  </xs:complexType>
+  <xs:complexType name="DaysIdleSeries">   
+  </xs:complexType>
+  <xs:complexType name="DaysWorkedSeries">  
+  </xs:complexType>
+  <xs:complexType name="ShiftTypesWorkedSeries">
+    <xs:sequence>
+      <xs:element name="ShiftTypeSetId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompleteWeekends">
+    <xs:sequence>
+      <xs:element name="DomainId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdenticalWeekends">
+    <xs:sequence>
+      <xs:element name="DomainId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AvoidShiftBeforeFreeWeekend">
+    <xs:sequence>
+      <xs:element name="ShiftTypeId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
